@@ -112,7 +112,9 @@ def cl_forward(cls,
     return_dict = return_dict if return_dict is not None else cls.config.use_return_dict
     ori_input_ids = input_ids
     batch_size = input_ids.size(0)
+    ### Notation!
     # Number of sentences in one instance
+    # 2: positive pairs, 3: x, x_+, x_-
     # 2: pair instance; 3: pair instance with a hard negative
     num_sent = input_ids.size(1)
 
